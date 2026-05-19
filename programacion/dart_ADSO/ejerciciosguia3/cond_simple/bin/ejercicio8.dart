@@ -11,14 +11,12 @@ void main(List<String> args) {
   cantidad = double.parse(stdin.readLineSync()!);
 
   precioMin = 600;
-  precioTotal = 600;
 
-  if(cantidad > 3){
-    precioTotal = 600+((cantidad-3)*150);
+  if (cantidad > 3) {
+    precioTotal = 600 + ((cantidad - 3) * 150);
 
     print("la cantidad a pagar de su uso de minutos es: $precioTotal");
   }
 
-  print("la cantidad a pagar de su uso de minutos es: $precioTotal");
-
+  print("la cantidad a pagar de su uso de minutos es: $precioMin");
 }
