@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ============================================ -->
+    <!-- 🎯 SECCIÓN 1: META ETIQUETAS Y ESTILOS BASE -->
+    <!-- VARIABLE PRINCIPAL: Configuración inicial del documento -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador Visual CSS - COMENTADO</title>
+
+    <style>
+        /* 🎨 RESET Y FONDO GLOBAL */
+        /* VARIABLE PRINCIPAL: * (asterisco) = selecciona TODOS los elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 🌈 FONDO GRADIENTE DEL BODY */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 🗂️ CONTENEDOR PRINCIPAL - GRID 1fr 2fr */
+        /* VARIABLE PRINCIPAL: .container = divide pantalla en 2 columnas */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* 📱 PANEL DE CONTROLES - EFECTO GLASSMORPHISM */
+        /* VARIABLE PRINCIPAL: .panel-control = panel izquierdo de controles */
+        .panel-control {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        /* 🖼️ VISUALIZADOR - 4 CAJAS EN GRID 2x2 */
+        /* VARIABLE PRINCIPAL: .visualizador = área derecha con 4 demos */
+        .visualizador {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            height: 600px;
+        }
+
+        /* 🔲 CAJAS DE DEMO - BASE COMÚN */
+        /* VARIABLE PRINCIPAL: .demo-box = estilo base para todas las cajas demo */
+        .demo-box {
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 📝 ETIQUETA INFO EN CAJAS (aparece abajo) */
+        .demo-box::before {
+            content: attr(data-info);
+            position: absolute;
+            bottom: 15px;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* 🎨 COLORES INICIALES DE CADA CAJA */
+        .box-ancho {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        }
+
+        .box-alto {
+            background: linear-gradient(45deg, #4834d4, #686de0);
+        }
+
+        .box-padding {
+            background: linear-gradient(45deg, #10ac84, #1dd1a1);
+        }
+
+        .box-margin {
+            background: linear-gradient(45deg, #feca57, #ff9ff3);
+        }
+
+        /* ⚙️ GRUPOS DE CONTROLES */
+        /* VARIABLE PRINCIPAL: .controles-grupo = cada sección de controles */
+        .controles-grupo {
+            margin-bottom: 25px;
+        }
+
+        .controles-grupo h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 📋 FILAS DE CONTROLES HORIZONTALES */
+        /* VARIABLE PRINCIPAL: .control-row = label + slider + valor */
+        .control-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        /* 🏷️ ETIQUETAS DE LOS CONTROLES */
+        label {
+            font-weight: 500;
+            color: #555;
+            min-width: 80px;
+        }
+
+        /* 🎚️ INPUTS Y SELECTS - ESTILO MODERNO */
+        select,
+        input[type="range"],
+        input[type="number"] {
+            padding: 8px 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        /* ✨ FOCO EN INPUTS */
+        select:focus,
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* 🎛️ SLIDER PERSONALIZADO */
+        input[type="range"] {
+            flex: 1;
+            height: 8px;
+            border-radius: 5px;
+            background: #e1e5e9;
+            outline: none;
+        }
+
+        /* 🖱️ PULGAR DEL SLIDER */
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 💎 VALOR ACTUAL EN PANTALLA */
+        /* VARIABLE PRINCIPAL: .valor-actual = muestra el valor numérico */
+        .valor-actual {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* 🖌️ PICKER DE COLOR */
+        .color-picker {
+            width: 50px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .color-picker:hover {
+            transform: scale(1.1);
+        }
+
+        /* ℹ️ PANEL DE INFORMACIÓN */
+        .info-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        /* RESPONSIVE - MÓVILES */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .visualizador {
+                grid-template-columns: 1fr;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================ -->
+    <!-- 🎯 SECCIÓN 2: ESTRUCTURA HTML PRINCIPAL -->
+    <!-- VARIABLE PRINCIPAL: .container = DIVIDE PANTALLA EN 2 -->
+    <!-- ============================================ -->
+    <div class="container">
+        <!-- 🖥️ PANEL IZQUIERDO: CONTROLES -->
+        <div class="panel-control">
+            <h1>🎨 Explorador CSS COMENTADO</h1>
+
+            <!-- 📏 SECCIÓN 1: CONTROL DE DIMENSIONES -->
+            <div class="controles-grupo">
+                <h3>📏 Dimensiones</h3>
+                <!-- 🎚️ CONTROL ANCHO -->
+                <div class="control-row">
+                    <label>Ancho:</label>
+                    <!-- 👉 ID="unidadAncho" = CAMBIA unidad (px/em/rem...) -->
+                    <select id="unidadAncho">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                        <option value="vw">vw</option>
+                        <option value="vh">vh</option>
+                        <option value="%">&percnt;</option>
+                    </select>
+                    <!-- 👉 ID="valorAncho" = CAMBIA VALOR NUMÉRICO -->
+                    <input type="range" id="valorAncho" min="10" max="500" value="200">
+                    <!-- 👉 MUESTRA VALOR EN TIEMPO REAL -->
+                    <span class="valor-actual" id="valorAnchoActual">200px</span>
+                </div>
+
+                <!-- 🎚️ CONTROL ALTO -->
+                <div class="control-row">
+                    <label>Alto:</label>
+                    <select id="unidadAlto">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                        <option value="vw">vw</option>
+                        <option value="vh">vh</option>
+                        <option value="%">&percnt;</option>
+                    </select>
+                    <input type="range" id="valorAlto" min="10" max="400" value="150">
+                    <span class="valor-actual" id="valorAltoActual">150px</span>
+                </div>
+            </div>
+
+            <!-- 🖌️ SECCIÓN 2: COLORES -->
+            <div class="controles-grupo">
+                <h3>🎨 Colores</h3>
+                <div class="control-row">
+                    <label>Fondo:</label>
+                    <!-- 👉 ID="colorFondo" = COLOR DE FONDO -->
+                    <input type="color" id="colorFondo" class="color-picker" value="#ff6b6b">
+                </div>
+                <div class="control-row">
+                    <label>Texto:</label>
+                    <!-- 👉 ID="colorTexto" = COLOR DE TEXTO -->
+                    <input type="color" id="colorTexto" class="color-picker" value="#ffffff">
+                </div>
+            </div>
+
+            <!-- 📐 SECCIÓN 3: BOX MODEL -->
+            <div class="controles-grupo">
+                <h3>📐 Box Model</h3>
+                <div class="control-row">
+                    <label>Padding:</label>
+                    <!-- 👉 ID="padding" = ESPACIADO INTERIOR -->
+                    <input type="range" id="padding" min="0" max="50" value="20">
+                    <span class="valor-actual" id="valorPadding">20px</span>
+                </div>
+                <div class="control-row">
+                    <label>Margin:</label>
+                    <!-- 👉 ID="margin" = ESPACIADO EXTERIOR -->
+                    <input type="range" id="margin" min="0" max="50" value="10">
+                    <span class="valor-actual" id="valorMargin">10px</span>
+                </div>
+            </div>
+
+            <!-- ℹ️ PANEL INFO EN TIEMPO REAL -->
+            <div class="info-panel">
+                <h4>📋 Valores actuales:</h4>
+                <div id="infoDimensiones"></div>
+            </div>
+        </div>
+
+        <!-- 🖼️ PANEL DERECHO: 4 CAJAS VISUALES -->
+        <div class="visualizador">
+            <!-- 🔲 CAJA 1: DEMO DE ANCHO -->
+            <div class="demo-box box-ancho" id="boxAncho">ANCHO</div>
+            <!-- 🔲 CAJA 2: DEMO DE ALTO -->
+            <div class="demo-box box-alto" id="boxAlto">ALTO</div>
+            <!-- 🔲 CAJA 3: DEMO DE PADDING -->
+            <div class="demo-box box-padding" id="boxPadding">PADDING</div>
+            <!-- 🔲 CAJA 4: DEMO DE MARGIN -->
+            <div class="demo-box box-margin" id="boxMargin">MARGIN</div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 🎯 SECCIÓN 3: JAVASCRIPT - LÓGICA PRINCIPAL -->
+    <!-- VARIABLE PRINCIPAL: elementos = OBJETO con TODOS los controles -->
+    <!-- ============================================ -->
+    <script>
+        // 🗂️ OBJETO CENTRAL - TODOS LOS ELEMENTOS HTML
+        const elementos = {
+            unidadAncho: document.getElementById('unidadAncho'),      // ← UNIDAD ANCHO
+            valorAncho: document.getElementById('valorAncho'),        // ← VALOR ANCHO
+            valorAnchoActual: document.getElementById('valorAnchoActual'), // ← DISPLAY ANCHO
+            unidadAlto: document.getElementById('unidadAlto'),        // ← UNIDAD ALTO
+            valorAlto: document.getElementById('valorAlto'),          // ← VALOR ALTO
+            valorAltoActual: document.getElementById('valorAltoActual'),   // ← DISPLAY ALTO
+            colorFondo: document.getElementById('colorFondo'),        // ← COLOR FONDO
+            colorTexto: document.getElementById('colorTexto'),        // ← COLOR TEXTO
+            padding: document.getElementById('padding'),              // ← PADDING
+            valorPadding: document.getElementById('valorPadding'),    // ← DISPLAY PADDING
+            margin: document.getElementById('margin'),                // ← MARGIN
+            valorMargin: document.getElementById('valorMargin'),      // ← DISPLAY MARGIN
+            boxAncho: document.getElementById('boxAncho'),            // ← CAJA ANCHO
+            boxAlto: document.getElementById('boxAlto'),              // ← CAJA ALTO
+            boxPadding: document.getElementById('boxPadding'),        // ← CAJA PADDING
+            boxMargin: document.getElementById('boxMargin'),          // ← CAJA MARGIN
+            infoDimensiones: document.getElementById('infoDimensiones') // ← PANEL INFO
+        };
+
+        // ============================================
+        // 🎨 FUNCIÓN PRINCIPAL: ACTUALIZAR TODO
+        // VARIABLE PRINCIPAL: Esta función se ejecuta SIEMPRE que cambias algo
+        // ============================================
+        function actualizarVisualizacion() {
+            // 📊 LEER VALORES DE CONTROLES
+            const ancho = elementos.valorAncho.value + elementos.unidadAncho.value;
+            const alto = elementos.valorAlto.value + elementos.unidadAlto.value;
+            const colorFondo = elementos.colorFondo.value;
+            const colorTexto = elementos.colorTexto.value;
+            const padding = elementos.padding.value + 'px';
+            const margin = elementos.margin.value + 'px';
+
+            // 🔢 ACTUALIZAR DISPLAYS NUMÉRICOS
+            elementos.valorAnchoActual.textContent = elementos.valorAncho.value + elementos.unidadAncho.value;
+            elementos.valorAltoActual.textContent = elementos.valorAlto.value + elementos.unidadAlto.value;
+            elementos.valorPadding.textContent = elementos.padding.value + 'px';
+            elementos.valorMargin.textContent = elementos.margin.value + 'px';
+
+            // ============================================
+            // 🔲 CAJA 1: ACTUALIZAR ANCHO
+            // ============================================
+            elementos.boxAncho.style.width = ancho;                    // ← APLICA ANCHO
+            elementos.boxAncho.style.background = `linear-gradient(45deg, ${colorFondo}, #ee5a24)`;
+            elementos.boxAncho.style.color = colorTexto;
+            elementos.boxAncho.style.padding = padding;
+            elementos.boxAncho.style.margin = margin;
+            elementos.boxAncho.setAttribute('data-info', `width: ${ancho}`);
+
+            // ============================================
+            // 🔲 CAJA 2: ACTUALIZAR ALTO
+            // ============================================
+            elementos.boxAlto.style.height = alto;                     // ← APLICA ALTO
+            elementos.boxAlto.style.background = `linear-gradient(45deg, ${colorFondo}, #686de0)`;
+            elementos.boxAlto.style.color = colorTexto;
+            elementos.boxAlto.style.padding = padding;
+            elementos.boxAlto.style.margin = margin;
+            elementos.boxAlto.setAttribute('data-info', `height: ${alto}`);
+
+            // ============================================
+            // 🔲 CAJA 3: MOSTRAR PADDING
+            // ============================================
+            elementos.boxPadding.style.width = '100%';
+            elementos.boxPadding.style.height = '100%';
+            elementos.boxPadding.style.padding = padding;              // ← APLICA PADDING
+            elementos.boxPadding.style.background = `linear-gradient(45deg, #10ac84, #1dd1a1)`;
+            elementos.boxPadding.style.color = colorTexto;
+            elementos.boxPadding.style.margin = margin;
+            elementos.boxPadding.setAttribute('data-info', `padding: ${padding}`);
+
+            // ============================================
+            // 🔲 CAJA 4: MOSTRAR MARGIN
+            // ============================================
+            elementos.boxMargin.style.width = '80%';
+            elementos.boxMargin.style.height = '80%';
+            elementos.boxMargin.style.margin = margin;                 // ← APLICA MARGIN
+            elementos.boxMargin.style.background = `linear-gradient(45deg, #feca57, ${colorFondo})`;
+            elementos.boxMargin.style.color = colorTexto;
+            elementos.boxMargin.style.padding = padding;
+            elementos.boxMargin.setAttribute('data-info', `margin: ${margin}`);
+
+            // ℹ️ ACTUALIZAR PANEL DE INFO
+            actualizarInfo();
+        }
+
+        // ============================================
+        // ℹ️ FUNCIÓN SECUNDARIA: PANEL DE INFORMACIÓN
+        // ============================================
+        function actualizarInfo() {
+            const ancho = elementos.valorAncho.value + elementos.unidadAncho.value;
+            const alto = elementos.valorAlto.value + elementos.unidadAlto.value;
+
+            elementos.infoDimensiones.innerHTML = `
+                <div style="font-size: 14px; line-height: 1.6;">
+                    <strong>📐 Dimensiones:</strong><br>
+                    Ancho: <code>${ancho}</code><br>
+                    Alto: <code>${alto}</code><br>
+                    Padding: <code>${elementos.padding.value}px</code><br>
+                    Margin: <code>${elementos.margin.value}px</code><br><br>
+                    <strong>🎨 Colores:</strong><br>
+                    Fondo: <code>#${elementos.colorFondo.value.slice(1).toUpperCase()}</code><br>
+                    Texto: <code>${elementos.colorTexto.value.slice(1).toUpperCase()}</code>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // 👂 EVENT LISTENERS - ESCUCHAR CAMBIOS
+        // ============================================
+        // Cada vez que cambies ALGO → actualizarVisualizacion()
+        ['unidadAncho', 'valorAncho', 'unidadAlto', 'valorAlto', 'colorFondo',
+            'colorTexto', 'padding', 'margin'].forEach(id => {
+                elementos[id].addEventListener('input', actualizarVisualizacion);
+                elementos[id].addEventListener('change', actualizarVisualizacion);
+            });
+
+        // ============================================
+        // 🔄 SINCRONIZAR SLIDERS CON DISPLAYS
+        // ============================================
+        elementos.valorAncho.addEventListener('input', function () {
+            elementos.valorAnchoActual.textContent = this.value + elementos.unidadAncho.value;
+        });
+
+        elementos.valorAlto.addEventListener('input', function () {
+            elementos.valorAltoActual.textContent = this.value + elementos.unidadAlto.value;
+        });
+
+        // 🚀 INICIALIZAR - PRIMERA VEZ
+        actualizarVisualizacion();
+
+        // ✨ EFECTOS HOVER EN CAJAS
+        document.querySelectorAll('.demo-box').forEach(box => {
+            box.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.02) rotate(1deg)';
+            });
+            box.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+
+</html>
