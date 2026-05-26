@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablas</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        table {
+            font-size: 1rem;
+            width: 100%;
+            color: rgb(0, 0, 0);
+            border-collapse: collapse;
+            tr{
+                th{
+                    background-color: rgba(0, 0, 0, 0.144);
+                }
+                td{
+                    background-color: #0005;
+                    padding: 0.3rem 0.3rem;
+                    text-align: center;
+                }
+            }
+            tr:nth-child(even) td{
+                background-color: rgba(201, 82, 82, 0.3);
+
+            }
+            tfoot{
+                td{
+                    background-color: rgba(69, 255, 32, 0.3);
+                    color: rgb(0, 0, 0);
+                    text-align: center;
+                }
+            }
+
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>07.tablas</h1>
+        <p>es un elemento que permite organizar y presentar datos estructurados en filas y columnas(datos tabulados). Se
+            utiliza exclusivamente para mostrar información relacional (como horarios, calendarios
+            o estadísticas) y no para el diseño visual de la página web.
+        </p>
+        <p>Para construir una tabla, se combinan varias etiquetas HTML de forma jerárquica:
+            "table": Es el contenedor principal que define la tabla."tr" (Table Row): Define una fila dentro de la
+            tabla.
+            "th"
+            (Table Header): Define una celda de encabezado. Suele llevar el texto en negrita y centrado.
+            "td" (Table Data): Define una celda de datos normal.
+        </p>
+    </header>
+    <section>
+        <table>
+            <!-- en esta sseccion van los titulos de las columnas -->
+            <thead>
+                <tr>
+                    <th>producto</th>
+                    <th>cantidad</th>
+                    <th>precio</th>
+                </tr>
+            </thead>
+            <!-- CUERPO: en esta seccion van los datos -->
+            <tbody>
+                <tr>
+                    <td>Teclado</td>
+                    <td>1</td>
+                    <td>$45.000</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>2</td>
+                    <td>$15.000</td>
+                </tr>
+                <tr>
+                    <td>Monitor 24"</td>
+                    <td>1</td>
+                    <td>$150.000</td>
+                </tr>
+                <tr>
+                    <td>Cable HTMI</td>
+                    <td>3</td>
+                    <td>$15.000</td>
+                </tr>
+                 <tr>
+                    <td>DISCO DURO</td>
+                    <td>5</td>
+                    <td>$200.000</td>
+                </tr>
+                 <tr>
+                    <td>memoria USB</td>
+                    <td>8</td>
+                    <td>$40.000</td>
+                </tr>
+
+            </tbody>
+            <!-- pie de tabla: resumenes o totales de cifras -->
+            <tfoot>
+
+                <tr>
+                    <td colspan="2">TOTAL A PAGAR</td>
+                    <td>$1.050.000</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+</body>
+
+</html>
