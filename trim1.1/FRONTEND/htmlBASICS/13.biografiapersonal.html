@@ -27,8 +27,9 @@
 
 
         div.content {
-            background-color: #0002;
-            border: 1px solid #000;
+            background-color: #1e293b;
+            border: 1px solid rgba(0, 242, 254, 0.6);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -38,6 +39,7 @@
             max-width: 900px;
 
             div.biografia {
+
                 color: white;
                 width: 80%;
                 margin: 0.5rem 0;
@@ -48,8 +50,11 @@
         }
 
         div.video {
-            background-color: #0002;
-            border: 1px solid #000;
+            background-color: #1e293b;
+            border: 1px solid rgba(0, 242, 254, 0.6);
+
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -62,6 +67,8 @@
 
         div.resumen {
             background-color: rgba(81, 119, 243, 0.133);
+            border: 1px solid rgba(0, 242, 254, 0.6);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
             color: white;
             padding: 30px;
             border-radius: 8px;
@@ -97,10 +104,15 @@
     <section>
         <div class="main">
             <div class="header">
-                <h1>HELLO WORLD!: MY STORY</h1>
+                <h1><span
+                        style="background-color: rgba(0, 242, 254, 0.1); color: #ffffff; padding: 1px 6px; border-radius: 4px; box-shadow: 0 0 4px rgba(0, 242, 254, 0.3);">HELLO
+                        WORLD!: MY STORY 👨🏻‍💻</span></h1>
+
+
             </div>
             <div class="content">
-                <h4>DETRAS DE LOS SISTEMAS: MI VIAJE EN ADSO</h4>
+                <h4><span 
+                    style="background-color: rgba(0, 242, 254, 0.1) ;">DETRAS DE LOS SISTEMAS: MI VIAJE EN ADSO 💻✈️</span></h4>
                 <div class="biografia">
                     <p>Mi nombre es Jero Medina, tengo 17 años y siempre me ha
                         fascinado descubrir cómo funciona la tecnología por dentro. No me bastaba con usar las
@@ -125,8 +137,9 @@
                 <video src="video/ADSO VIDEO.mp4" controls muted width="70%"></video>
 
             </div>
-            <div class="resumen">
-                <h4>En resumen</h4>
+            <div class="resumen" >
+                <span 
+                    style="background-color: rgba(0, 242, 254, 0.1); padding: 4px;">EN RESUMEN 👍🏼</span></h4>
                 <p>Mi experiencia en estos meses ha sido increíble. Ver cómo una idea pasa de estar en mi mente a
                     convertirse en algo real y funcional en la pantalla es una de las cosas que más me ha gustado de
                     esta formación. Con los conocimientos de ADSO, sé que puedo llegar a lograr grandes metas: desde
@@ -148,7 +161,7 @@
     <audio id="musicaFondo" src="audio/ps5.mp3" loop></audio>
     <script>
         const audio = document.getElementById('musicaFondo');
-        audio.volume = 0.05;
+        audio.volume = 0.20;
         // Función para arrancar el audio
         function iniciarAudio() {
             audio.play().catch(error => {
@@ -159,7 +172,7 @@
         // Intenta reproducir de inmediato
         iniciarAudio();
 
-        // TRUCO OBLIGATORIO: Si el navegador lo bloquea, se activará al primer clic del usuario
+      
         document.addEventListener('click', iniciarAudio, { once: true });
         document.addEventListener('scroll', iniciarAudio, { once: true });
     </script>
