@@ -1,4 +1,4 @@
-import 'package:cond_anidados/cond_anidados.dart';
+import 'package:cond_simples/cond_simples.dart';
 import 'package:test/test.dart';
 
 void main() {
