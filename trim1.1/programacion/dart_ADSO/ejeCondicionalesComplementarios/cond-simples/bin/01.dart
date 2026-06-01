@@ -1,6 +1,5 @@
 import 'dart:io';
 
-
 void main(List<String> args) {
   print("---gesion de auxilios de transporte CPIC---");
 
@@ -8,7 +7,7 @@ void main(List<String> args) {
   double auxilioBase, totalRecibir, diasAsistencia;
 
   print("cual es su nombre");
-  nombre = stdin.readLineSync() ?? "";
+  nombre = stdin.readLineSync() ??"";
 
   print("En que municipio vive");
   municipio = stdin.readLineSync()!.trim().toLowerCase();
@@ -17,7 +16,7 @@ void main(List<String> args) {
   diasAsistencia = double.parse(stdin.readLineSync()!);
   auxilioBase = diasAsistencia * 5000;
   totalRecibir = auxilioBase;
-  if (municipio != "manizales") {
+  if(municipio != "manizales"){
     double extra = auxilioBase * 0.15;
     totalRecibir = auxilioBase + extra;
   }
