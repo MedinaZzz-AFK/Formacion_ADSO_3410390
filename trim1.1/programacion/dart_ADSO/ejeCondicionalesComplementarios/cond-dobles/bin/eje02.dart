@@ -32,6 +32,7 @@ void main(List<String> args) {
   print("la tarifa aplicada es de $tarifa %");
   print("el impuesto es de $porcentajeImpuesto");
   print("el total a pagar del impuesto anual es de $impuestoAnual");
+  print("el modelo de su vehiculo es $modelo y la marca $marca");
 
 
 }
