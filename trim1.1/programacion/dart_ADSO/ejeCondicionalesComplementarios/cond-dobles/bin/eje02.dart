@@ -6,3 +6,32 @@ límite pagan una tarifa del 1.5%. Solicite la marca/modelo del vehículo y su a
 comercial actual. Determine cuál es el porcentaje aplicado y calcule el valor total del
 impuesto a pagar este año. */
 
+import 'dart:io';
+
+void main(List<String> args) {
+  double valorVehiculo, impuestoAnual, porcentajeImpuesto, tarifa;
+  String marca;
+  int modelo;
+
+  print("ingrese la marca de su vehiculo");
+  marca = stdin.readLineSync()!;
+  print("ingrese que modelo es su vehiculo");
+  modelo = int.parse(stdin.readLineSync()!);
+  print("ingrese el avalou del vehiculo");
+  valorVehiculo = double.parse(stdin.readLineSync()!);
+
+  if(valorVehiculo > 150000000){
+    tarifa = 2.5;
+    porcentajeImpuesto = valorVehiculo * 0.025;
+  }else{
+    tarifa = 1.5;
+    porcentajeImpuesto = valorVehiculo * 0.015;
+  }
+  impuestoAnual = valorVehiculo + porcentajeImpuesto;
+
+  print("la tarifa aplicada es de $tarifa %");
+  print("el impuesto es de $porcentajeImpuesto");
+  print("el total a pagar del impuesto anual es de $impuestoAnual");
+
+
+}
