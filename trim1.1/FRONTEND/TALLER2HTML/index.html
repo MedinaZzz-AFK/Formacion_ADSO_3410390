@@ -1,0 +1,148 @@
+<!-- 13. Maquetación Semántica Global
+Crea un archivo index.html que represente la estructura de un blog de noticias tecnológicas.
+Utiliza de forma estrictamente correcta las etiquetas: <header> (con un <nav> dentro),
+<main> (que contenga al menos dos <section>), cada sección con un <article>, un <aside>
+para enlaces laterales, y un <footer>. Añade textos ficticios de relleno. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1><b>EL NOTICIERO DE MZL</b></h1>
+        <p>Como esta la ciudad en la actualidad y el Desarrollo tecnologico que a tenido en los ultimos tiempos.</p>
+        <nav>
+            <ul>
+                <li><a href="http://endless.horse/">Random</a></li>
+                <li><a href="https://www.fallingfalling.com/">tecnologico</a></li>
+                <li><a href="https://papertoilet.com/">TOILETS</a></li>
+                <li><a href="http://isitchristmas.com/">Navidades</a></li>
+            </ul>
+            <a href="">El avance en la IA</a>
+            <a href="">Hadware & Consolas</a>
+            <a href="">Desarrolladores de Software</a>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-tarjetas"></div>
+        <section id="Inteligencia Artificial">
+            <h2>la Inteligencia Artificial</h2>
+
+            <article>
+                <h3><b>Modelos De Lenguaje a Futuro</b></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu aliquam odio, sed pharetra sem.
+                    Quisque a dolor sed odio luctus scelerisque a pulvinar arcu. Etiam auctor est sodales augue
+                    pellentesque ultricies. Proin tellus ligula, venenatis sed dignissim in, scelerisque et felis.
+                    In molestie mollis dolor, vitae tincidunt eros sollicitudin a. Sed sed nunc ullamcorper, ornare
+                    tortor quis, tristique augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                    posuere cubilia curae; Donec pharetra magna id nulla placerat, et semper orci imperdiet. Class
+                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Suspendisse aliquet in risus eu consectetur. Curabitur gravida elit quis justo egestas, in
+                    dapibus justo ullamcorper. Nullam eleifend eleifend vehicula.</p>
+            </article>
+            <article>
+                <h3><b>Como podria influir a futuro</b></h3>
+                <p>Curabitur aliquet quam ac tortor aliquam aliquam. Etiam vel varius sem. Quisque id magna at erat
+                    placerat aliquam. Vestibulum quis maximus mauris. Donec lacinia in orci non lobortis. Fusce
+                    tincidunt sem vitae risus sollicitudin faucibus. Etiam lobortis rhoncus nunc nec consectetur.
+                    Praesent semper augue in justo porta tristique. Morbi molestie risus ligula, vitae pretium risus
+                    auctor id. Praesent ultricies lobortis risus quis imperdiet. Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas. Sed vitae ante sit amet ante
+                    rutrum posuere nec eu ex. Suspendisse ultricies vitae risus eget dignissim. Vivamus lobortis
+                    egestas dui in tincidunt. Curabitur at molestie turpis, in pellentesque ex. Donec sollicitudin
+                    felis in fermentum vestibulum.</p>
+            </article>
+        </section>
+        <div class="tarjeta">
+            <h3>Cafe Manizaleño</h3>
+            <img src="img/manizales.jpg" alt="el arhivo no pudo ser cargado X/">
+            <p>Manizales, es la capital del departamento de Caldas y se encuentra ubicada en la cordillera Central,
+                cerca del nevado del Ruiz, el nombre de esta ciudad proviene de la abundancia de las llamadas “Piedras
+                de maní”, rocas graníticas de color gris, compuestas por mica, feldespato y cuarzo. ¡COMPRA YA EL CAFE
+                MANIZALEÑO!</p>
+            <button>Comprar Ahora Cafe MZL ☕</button>
+        </div>
+
+        <section id="Hadware y Consolas">
+            <h2>LA IMPLEMENTACION DE HADWARE Y CONSOLAS EN MZL!</h2>
+
+            <article>
+                <h3><b>Retrocomputación y optimización de sistemas embebidos</b></h3>
+                <p>Etiam eu augue nisl. Mauris sed augue ac justo laoreet ullamcorper. Sed vehicula mauris vitae
+                    bibendum sagittis. In eget ipsum vulputate augue pretium eleifend quis vitae orci. Interdum et
+                    malesuada fames ac ante ipsum primis in faucibus. Donec ornare sodales diam vitae interdum.
+                    Aliquam erat volutpat. Mauris sem augue, suscipit non imperdiet quis, varius vel eros. Praesent
+                    pulvinar mi lacus, in pulvinar quam fermentum sed. Interdum et malesuada fames ac ante ipsum
+                    primis in faucibus. Praesent condimentum nisi tortor, in viverra eros ornare nec. Donec finibus
+                    neque tristique interdum laoreet.</p>
+            </article>
+            <article>
+                <h3><b>Nuevas arquitecturas de tarjetas gráficas para el 2026</b></h3>
+                <p>Maecenas eget ex ipsum. Nulla quis elementum orci. Fusce finibus ipsum erat, eu tincidunt nibh
+                    semper at. Donec sapien mauris, fringilla et lacus sit amet, scelerisque euismod lacus. Aliquam
+                    accumsan turpis in ipsum egestas, consectetur lobortis magna tempus. Aenean vitae placerat elit.
+                    Ut non pharetra libero. Proin id est arcu. Curabitur tempor varius eros a ultricies. Nulla ac
+                    magna massa.</p>
+            </article>
+
+        </section>
+        <div class="tarjeta">
+            <img src="img/emuladores.jpg" alt="Kit de Mandos">
+            <h3>Kit de Optimización Emuladores</h3>
+            <p>Todo lo necesario para sacarle el máximo partido a tus hardwares clásicos. Incluye almacenamiento de alta
+                velocidad preconfigurado.</p>
+            <button>Comprar ahora 🎮🔥</button>
+        </div>
+
+        <section id="Software Development">
+            <h2>EL EMPLEO DE DESARROLLADOS DE SOFTWARE EN MANIZALES</h2>
+
+            <article>
+                <h3><b>los Desarrolladores de Software</b></h3>
+                <p>Sed maximus, velit nec blandit aliquam, turpis lectus imperdiet mi, at ultrices lectus lorem sit
+                    amet lorem. Cras eget felis non ligula tempor pulvinar a nec purus. Phasellus malesuada
+                    efficitur leo, placerat dignissim quam tempus quis. Cras sodales eu turpis quis egestas. Vivamus
+                    luctus erat vel tellus imperdiet, eu vestibulum elit ornare. Aenean iaculis arcu sit amet tortor
+                    finibus pretium. In ipsum dolor, bibendum eu purus ut, convallis pellentesque metus. Fusce sed
+                    venenatis tortor. Aliquam ut libero sed ante molestie scelerisque eu at massa.</p>
+            </article>
+            <article>
+                <h3><b>Que porcentaje hay de conseguir trabajo ¿?</b></h3>
+                <p>Mauris non euismod tellus. Vestibulum nec lectus non urna facilisis mollis. Cras volutpat felis
+                    commodo diam feugiat suscipit. Cras ac tempor dolor, quis congue diam. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit. Nunc arcu urna, feugiat sit amet tincidunt sit amet, iaculis
+                    id leo. Duis eget elit posuere, scelerisque libero aliquam, porttitor ex. Curabitur vulputate
+                    gravida faucibus. Vestibulum maximus erat quis faucibus gravida. Aliquam sed molestie nisi. Cras
+                    felis massa, auctor eu mauris ac, consequat imperdiet magna. Curabitur condimentum leo est,
+                    cursus vehicula lacus tincidunt aliquet.</p>
+            </article>
+        </section>
+        <div class="tarjeta">
+            <div class="tarjeta">
+            <img src="img/61RTQhAfCsL.jpg" alt="Consola Portátil">
+            <h3>Consola Retro Portátil</h3>
+            <p>Disfruta de miles de juegos clásicos en cualquier lugar. Pantalla IPS de alta definición y batería de larga duración.</p>
+            <button>Comprar ahora 🕹️🎰</button>
+        </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 El Noticiero de Mzl. Todos los derechos reservados. Estructura maquetada bajo estándares HTML5.
+        </p>
+    </footer>
+
+</body>
+
+</html>
