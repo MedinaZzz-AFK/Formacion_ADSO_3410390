@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura Divs</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div.main{
+            border: 2px solid #000000;
+            color: #575454;
+            font-size: 1rem;
+            padding: 1.5rem;
+            div.header{
+                background-color: antiquewhite;
+                border: 2px solid #000;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            div.content{
+                background-color: aquamarine;
+                border: 2px solid #000;
+                color: black;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: .7rem 0;
+                min-height: 200px;
+            }
+            div.footer{
+                background-color: rgb(45, 158, 233);
+                border: 2px solid #000000;
+                color: black;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: .7rem 0;
+            }
+            div.biografia{
+                background-color: rgb(169, 248, 222);
+                border: 2px solid #000000;
+                color: black;
+                padding: 1rem;
+                width: 80%;
+                margin: 0.5rem 0;
+                justify-content: center;
+            }
+            div.resumen{
+                background-color: rgb(169, 223, 205);
+                border: 2px solid #000000;
+                color: black;
+                padding: 1rem;
+                width: 80%;
+                margin: 0.5rem 0;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>12. Estructura Divs</h1>
+        <h2>Con esta etiqueta podemos generar una estructura en el Sitio web (forma antigua)</h2>
+    </header>
+    <section>
+        <div class="main">
+            <div class="header">
+                <h4>Este es el header</h4>
+                <p>Acá podemos colocar un título o frase corta</p>
+            </div>
+            <div class="content">
+                <h4>Este es el DIV para el contenido</h4>
+                <div class="biografia">
+                    <h4>biografia</h4>
+                </div>
+                <div class="resumen">
+                    <h4>resumen</h4>
+                </div>
+            </div>
+            <div class="footer">
+                <h4>Este es el Pie de página</h4>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

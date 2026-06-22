@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura semnatica HTML 5</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            header {
+                border: 1px solid #000;
+                background-color: antiquewhite;
+            }
+
+            section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #009;
+                background-color: burlywood;
+                margin: 1rem 0;
+                width: 100%;
+                border-radius: unset;
+            }
+
+            footer {
+                border: 2px solid #009;
+                background-color: beige;
+            }
+
+            article {
+                border: 1px solid #0009;
+                background-color: azure;
+                width: 70%;
+                min-height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            aside {
+                border: 1px solid #0009;
+                background-color: azure;
+                width: 30%;
+                min-height: 100px;
+            }
+        }
+
+        header,
+        nav,
+        aside,
+        footer {
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>14. Estructura semnatica HTML 5</h1>
+        <P>Generación de estructura moderna, utilizando las estructuras de HTML para realización del maquetado</P>
+    </header>
+    <section>
+        <!-- Contenedor principal !-->
+        <main>
+            <header>
+                <h1>Titulo encabezado</h1>
+                <nav>Menú navegación</nav>
+            </header>
+            <section>
+                <article>Contenido del article</article>
+                <aside>Contenido aside</aside>
+            </section>
+            <footer>Contenido footer</footer>
+        </main>
+    </section>
+</body>
+
+</html>
