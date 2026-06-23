@@ -13,7 +13,6 @@ import 'dart:io';
 void main(List<String> args) {
   int edad, cantNinos = 0, cantJovenes = 0, cantAdultos = 0, cantMayores = 0;
   double peso,
-      promedio,
       pesoNinos = 0,
       pesoJovenes = 0,
       pesoAdultos = 0,
