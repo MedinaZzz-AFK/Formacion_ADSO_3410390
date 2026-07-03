@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller-3-HTML</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <main class="contenedor-principal">
+        <h1>Dashboard de Usuario</h1>
+
+        <div class="contenedor-tarjetas">
+            <section class="perfil-card">
+                <h2>Scrum Master</h2>
+                <img src="img/WhatsApp Image 2026-07-03 at 10.46.53 AM.jpeg" alt="la imagen no se pudo cargar.">
+                <p><strong>Nombre:</strong> Jerónimo Medina</p>
+                <p><strong>Rol:</strong> facilitador y líder servidor.</p>
+            </section>
+
+            <section class="perfil-card">
+                <h2>Backend</h2>
+                <img src="img/WhatsApp Image 2026-07-03 at 10.47.13 AM.jpeg" alt="la imagen no se pudo cargar.">
+                <p><strong>Nombre:</strong> Angie Veronica</p>
+                <p><strong>Rol:</strong> Desarrollador Backend</p>
+            </section>
+
+            <section class="perfil-card">
+                <h2>Frontend</h2>
+                <img src="img/WhatsApp Image 2026-07-03 at 10.28.05 AM.jpeg" alt="la imagen no se pudo cargar.">
+                <p><strong>Nombre:</strong> Alejandro Rua</p>
+                <p><strong>Rol:</strong> parte visual y la interfaz de usuario</p>
+            </section>
+        </div>
+        <button class="btn-enviar">Enviar Formulario</button>
+        <section class="seccion-faq">
+            <h2>Preguntas Frecuentes</h2>
+
+            <details class="faq-item">
+                <summary class="faq-titulo">
+                    ¿Qué es el desarrollo backend?
+                    <span class="faq-icono"></span>
+                </summary>
+                <div class="faq-contenido">
+                    <p>El backend se refiere a la lógica de la aplicación, el manejo de servidores, bases de datos y la
+                        integración de sistemas que ocurren del lado del servidor.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-titulo">
+                    ¿Cómo se aplican las variables en CSS?
+                    <span class="faq-icono"></span>
+                </summary>
+                <div class="faq-contenido">
+                    <p>Las variables de CSS se declaran dentro de una regla, comúnmente en la raíz (:root), y permiten
+                        reutilizar valores de diseño en toda la hoja de estilos de forma centralizada.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="loader"></div>
+    </main>
+    <footer class="pie-pagina">
+        <p>Jeronimo Medina - 2026 &copy;</p>
+    </footer>
+
+
+
 </body>
+
 </html>
