@@ -1,20 +1,154 @@
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f4f2f7;
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23afafb0' fill-opacity='0.14' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    padding: 2rem 1rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: 200;
-    font-family: "Bebas Neue", sans-serif;
+    min-height: 100vh;
+    background-image: url("banner-web-template-abstract-blue-and-golden-wave-curved-lines-overlapping-layer-design-on-dark-blue-background-luxury-style-vector.jpg");
+    
+}
+
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+section,
+.caja-principal,
+.caja-secundaria,
+#caja-principal,
+#caja-secundaria,
+.tarjeta,
+#lista-favoritos {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 1.5rem;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f1227c;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #3d2a4a;
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+}
+
+strong {
+    color: #5a2d7a;
+    font-weight: 600;
+}
+
+em {
+    color: #7a4a9a;
+    font-style: italic;
+}
+
+
+#lista-favoritos ol {
+    padding-left: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+#lista-favoritos li {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2d1b3d;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #e0d6e8;
+}
+
+#lista-favoritos li:last-child {
+    border-bottom: none;
+}
+
+a {
+    display: inline-block;
+    background: #6b3f8a;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7rem 1.8rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(107, 63, 138, 0.3);
+    margin-top: 0.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 1rem 0 0.5rem 0;
+    border: 2px solid #fff;
+}
+
+
+.tarjeta {
+    background: #ffffffd9;
+}
+
+.tarjeta h1 {
+    color: #4b2a5e;
+}
+
+.tarjeta p {
+    color: #3b3a3e;
+}
+
+
+.caja-secundaria {
+    background: rgba(245, 240, 250, 0.9);
+    border-left: 6px solid #9b7bb5;
+    border: 2px solid #007bff;
+}
+
+#caja-principal {
+    background: rgba(0, 31, 92, 0.9);
+    border-left: 6px solid #7a9bcb;
+    background-color: #0c0c58;
+    color: #ffffff;
+}
+.caja-principal h1 {
+    color: #ffffff;
 }
 
 section {
-    background-color: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 2);
-    font-weight: lighter;
-    padding: 1rem;
-    margin: 1rem;
-    width: 70%;
-    border-radius: 0.5rem;
+    background: rgba(255, 248, 245, 0.9);
+    border-left: 6px solid #d9a5b3;
 }
+
+.tarjeta{
+    padding: 20px;
+    margin: 15px;
+
+}
+

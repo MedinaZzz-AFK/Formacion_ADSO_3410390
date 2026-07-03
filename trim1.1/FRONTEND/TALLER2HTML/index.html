@@ -19,6 +19,15 @@ para enlaces laterales, y un <footer>. Añade textos ficticios de relleno. -->
 
 <body>
 
+    <aside class="menu-lateral">
+    <h3>Menú Lateral</h3>
+    <ul>
+        <li><a href="#ia">🤖 Inteligencia Artificial</a></li> 
+        <li><a href="#hardware">🎮 Hardware & Consolas</a></li>
+        <li><a href="#software">💻 KIT de optimizacion para emuladores</a></li>
+        <li><a href="#contacto">📩 Contacto</a></li>
+    </ul>
+</aside>
     <header>
         <h1><b>EL NOTICIERO DE MZL</b></h1>
         <p>Como esta la ciudad en la actualidad y el Desarrollo tecnologico que a tenido en los ultimos tiempos.</p>
@@ -142,6 +151,35 @@ para enlaces laterales, y un <footer>. Añade textos ficticios de relleno. -->
         <p>&copy; 2026 El Noticiero de Mzl. Todos los derechos reservados. Estructura maquetada bajo estándares HTML5.
         </p>
     </footer>
+    <section id="contacto" class="seccion-contacto">
+    <h2>Contacto</h2>
+    <article>
+        <h3>¿Tienes alguna noticia o sugerencia? ¡Escríbenos!</h3>
+        
+        <form action="#" method="POST" class="formulario-contacto">
+            
+            <div class="grupo-formulario">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="mensaje">Mensaje o Sugerencia:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+
+            <div class="grupo-formulario">
+                <button type="submit" class="boton-enviar">Enviar Mensaje 📩</button>
+            </div>
+
+        </form>
+    </article>
+</section>
 
 </body>
 
