@@ -33,7 +33,7 @@ void main(List<String> args) {
 
   //resultado
   print("la cantidad de pares es: $contPares");
-  print("la cantidad de impares es: $contPares");
+  print("la cantidad de impares es: $contImpares");
   print("el producto de los pares es: $productoPares");
 
   if (sumaImpares > 0) {

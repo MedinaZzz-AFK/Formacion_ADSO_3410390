@@ -38,7 +38,7 @@ void main(List<String> args) {
     }
   }
 
-  print("la cantidad de ceros son: $contadorC");
-  print("la cantidad de negativos son: $contadorN");
-  print("la cantidad de positivos son: $contadorP");
+  print("la cantidad de ceros son: $contadorC y su suma es $suma0");
+  print("la cantidad de negativos son: $contadorN y su suma es $suma2");
+  print("la cantidad de positivos son: $contadorP y su suma es $suma");
 }
