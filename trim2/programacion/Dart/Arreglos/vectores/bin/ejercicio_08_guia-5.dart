@@ -6,7 +6,7 @@ Se le conoce como "burbuja" porque en cada pasada los valores más grandes van "
 
 en resumen es un metodo que orgaiza todos sus valores si ven que estan en el orden incorrecto */
 
-void bubbleSort(List<int> arreglo) {
+void ordenamientoBurbuja(List<int> arreglo) {
   int n = arreglo.length;
   for (int i = 0; i < n; i++) {
     bool intercambiado = false;
@@ -22,10 +22,14 @@ void bubbleSort(List<int> arreglo) {
   }
 }
 
+void ordenamientoJero(){
+  print("Hola Jero!");
+}
+
 void main() {
   List<int> numeros = [42, 15, 88, 23, 7, 54, 91, 3, 62, 35];
-
+  ordenamientoJero();
   print('Arreglo original: $numeros');
-  bubbleSort(numeros);
+  ordenamientoBurbuja(numeros);
   print('Arreglo ordenado:  $numeros');
 }

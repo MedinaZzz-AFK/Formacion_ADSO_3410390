@@ -7,6 +7,8 @@ void main() {
   print("Por favor digite la palabra o frase:");
   String entrada = stdin.readLineSync()!;
 
+  // ANA
+
   List<String> vector = [];
 
   for (var i = 0; i < entrada.length; i++) {
@@ -31,5 +33,5 @@ void main() {
     print("La palabra o frase ES palíndroma.");
   } else {
     print("La palabra o frase NO es palíndroma.");
-  }
+      }
 }
