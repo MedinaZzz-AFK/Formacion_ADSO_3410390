@@ -3,9 +3,9 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:vmservice_io';
 
-List<String> temas = [];
-List<int> cupos = [];
-List<String> estudiantes = [];
+List<String> temas = ["Tema 1", "Tema 2," "Tema 3"];
+List<int> cupos = [2,2,2];
+List<String> estudiantes = ["E1","E2","E3","E4","E5","E6"];
 List<String> aleatorioEstud = [];
 List<List<String>> asignaciones = [];
 
