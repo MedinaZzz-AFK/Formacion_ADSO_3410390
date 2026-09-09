@@ -3,15 +3,15 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:vmservice_io';
 
-List<String> temas = ["Tema 1", "Tema 2," "Tema 3"];
-List<int> cupos = [2,2,2];
-List<String> estudiantes = ["E1","E2","E3","E4","E5","E6"];
+List<String> temas = [];
+List<int> cupos = [];
+List<String> estudiantes = [];
 List<String> aleatorioEstud = [];
 List<List<String>> asignaciones = [];
 
 void main(List<String> arguments) {
   menuPrincipal();
-}
+} 
 
 void menuPrincipal() {
   int opcion = 0;
@@ -185,7 +185,50 @@ void visualizarAsignaciones() {
     print("-"*50);
   }
 }
-void precargarDatosPrueba() {}
+void precargarDatosPrueba() {
+  temas = [
+    '¿Qué es la programación Orientada a Objetos? ¿Cuáles son las características principales de la POO?',
+    '¿Cuál es la diferencia entre POO y programación estructurada? ¿Qué otros paradigmas hay y en qué consisten?',
+    '¿Qué es un objeto? ¿Qué es una Clase? ¿Cuál es la diferencia entre Objeto y Clase?',
+    '¿Qué es abstracción? Tener en cuenta: Clases Abstractas vs. Interfaces.',
+    '¿Qué es encapsulamiento? Modificadores de acceso, constructores/destructores, miembros estáticos.',
+    '¿Qué es herencia y un ejemplo gráfico y funcional?',
+    '¿Qué es polimorfismo y un ejemplo gráfico y funcional? (Overriding vs. Overloading)',
+    '¿Cuáles son los principales diagramas de UML? Relaciones entre clases en UML y código.'
+  ];
+  cupos = [3, 3, 3, 3, 3, 4, 4, 4]; // Total cupos = 27 estudiantes
+  estudiantes = [
+    'Alejandro Rua',
+    'Stiven Gonzalez',
+    'Miguel Angel Garcia',
+    'Leider Serna',
+    'Maria Jose Osorio',
+    'Mateo Pescador',
+    'Mateo Henao',
+    'Angie Veronica Carvajal',
+    'Juan Jose Bernal',
+    'Juan Diego Giraldo',
+    'Miguel Angel Cortes',
+    'Valeria Murillo',
+    'Yulieth Luna',
+    'Jean Karlo Velazquez',
+    'Camilo Morales',
+    'Thomas Toro',
+    'Johan Sebastian Zambrano',
+    'Susana Castro',
+    'Karol Daian Navia',
+    'David Ramirez',
+    'Santiago Gomez',
+    'Camilo Gil',
+    'Hector Alejandro Jimenez',
+    'Esteban Quiceno',
+    'Valeria Arenas',
+    'Jeronimo Medina',
+    'Juan Jose Lopez',
+  ];
+  asignaciones=[];
+  print("datos pre-cargados con exito");
+}
 
 // Funciones para TEMAS
 void crearTema() {
