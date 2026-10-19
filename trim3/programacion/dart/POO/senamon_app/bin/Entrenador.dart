@@ -1,37 +1,57 @@
+import 'Senamon.dart';
+
 class Entrenador {
   String _nombre;
   String _email;
   DateTime _fechaNto;
   int _nivelXP;
   int _batallasGanadas;
+  List<Senamon> equipoSenamon = [];
 
-  Entrenador (this._nombre, this._email, this._fechaNto, this._nivelXP, this._batallasGanadas);
+  // Constructor
+  Entrenador(this._nombre, this._email, this._fechaNto, this._nivelXP, this._batallasGanadas);
 
-  //Metodo set y GET
-
-  void setNombre( String nom){
-    _nombre=nom;
+  // Métodos SET y GET
+  void setNombre(String nom){
+    _nombre = nom;
   }
-
   String getNombre(){
     return _nombre;
   }
-
-  void setFechaNto ( DateTime fecha ){
+  void setEmail(String email){
+    _email = email;
+  }
+  String getEmail(){
+    return _email;
+  }
+  void setFechaNto(DateTime fecha){
     _fechaNto = fecha;
   }
-
   DateTime getFechaNto(){
     return _fechaNto;
   }
 
-  //REGLAS DEL NEGOCIO
-
+  // Métodos - REglas del Negocio
   bool validacionXP(){
-    if (_nivelXP >= 200) {
+    if(_nivelXP >= 200){
       return true;
     }else{
       return false;
     }
+  }
+
+  void mostrarEntrenador(){
+    print("-"*40);
+    print("nombre $_nombre");
+    print("email: $_email");
+    print("fecha de nacimiento: $_fechaNto");
+    print("Nivel de XP: $_nivelXP");
+    print("Batallas ganadas: $_batallasGanadas");
+    print("-"*40);
+    print("SENAMONES DEL EQUIPO DE: $_nombre");
+    for (var element in equipoSenamon) {
+      element.mostrarInfoSenamon();
+    }
+
   }
 }
